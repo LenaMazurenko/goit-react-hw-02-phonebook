@@ -1,0 +1,17 @@
+.FormContacts {
+  /* width: 300px; */
+  height: auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 2px solid darkgrey;
+}
+.Label {
+  width: 200px;
+  margin-bottom: 20px;
+}
+.SubmitBtn {
+  width: 100px;
+  margin-bottom: 20px;
+  padding: 5px;
+}
