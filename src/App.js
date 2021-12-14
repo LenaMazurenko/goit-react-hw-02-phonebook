@@ -5,7 +5,6 @@ import FormContacts from './components/FormContacts';
 import Filter from './components/Filter';
 import ContactsList from './components/ContactsList';
 
-//model.id = nanoid() //=> "V1StGXR8_Z5jdHi6B-myT"
 class App extends Component {
   state = {
     contacts: [
@@ -37,9 +36,11 @@ class App extends Component {
       }));
     }
   };
+
   filterHundler = ev => {
     this.setState({ filter: ev.target.value });
   };
+
   findeContact = () => {
     const findeContact = this.state.contacts.filter(
       item =>
@@ -48,6 +49,12 @@ class App extends Component {
     );
     console.log(findeContact);
     return findeContact !== [] ? findeContact : undefined;
+  };
+
+  deletHundler = id => {
+    this.setState(prevState => ({
+      contacts: prevState.contacts.filter(contact => contact.id !== id),
+    }));
   };
 
   render() {
@@ -62,6 +69,7 @@ class App extends Component {
         <ContactsList
           list={this.state.contacts}
           findeContact={this.findeContact()}
+          onDelet={this.deletHundler}
         />
       </Section>
     );

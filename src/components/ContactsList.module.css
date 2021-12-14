@@ -1,0 +1,15 @@
+.ContactsList {
+  list-style: none;
+}
+.ContactsList_item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #000;
+}
+.ItemBtn {
+  display: block;
+  height: 30px;
+  width: 60px;
+  margin-left: 50px;
+}
