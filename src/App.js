@@ -58,7 +58,7 @@ class App extends Component {
 
   render() {
     const findesContacts = this.findeContact();
-    console.log(findesContacts);
+
     return (
       <Section>
         <h1>Phonebook </h1>
