@@ -1,21 +1,30 @@
 import React from 'react';
-import s from './ContactsList.module.css';
+import PropTypes from 'prop-types';
+import { List, Item, Btn } from './ContactsList.styled';
 
 const ContactsList = ({ findeContact, onDelet }) => {
   return (
-    <ul className={s.ContactsList}>
+    <List>
       {findeContact.map(item => (
-        <li className={s.ContactsList_item} key={item.id}>
+        <Item key={item.id}>
           <p>
             &#9742; -- {item.name}- {item.number}
           </p>
-          <button onClick={() => onDelet(item.id)} className={s.ItemBtn}>
-            Delet
-          </button>
-        </li>
+          <Btn onClick={() => onDelet(item.id)}>Delet</Btn>
+        </Item>
       ))}
-    </ul>
+    </List>
   );
 };
 
+ContactsList.propTypes = {
+  findeContact: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      name: PropTypes.string,
+      number: PropTypes.string,
+    }),
+  ),
+  onDelet: PropTypes.function(),
+};
 export default ContactsList;

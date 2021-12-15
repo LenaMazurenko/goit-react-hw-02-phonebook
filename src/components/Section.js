@@ -1,7 +1,6 @@
 import React from 'react';
-import s from './Section.module.css';
+import { Section } from './Section.styled';
 
-const Section = ({ children }) => {
-  return <section className={s.Section}>{children}</section>;
+export const Wrapper = ({ children }) => {
+  return <Section>{children}</Section>;
 };
-export default Section;

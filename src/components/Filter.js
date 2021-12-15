@@ -1,6 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const Filter = ({ findeName, onFind }) => {
+export const Filter = ({ findeName, onFind }) => {
   return (
     <label>
       Find contacts by name
@@ -16,4 +17,7 @@ const Filter = ({ findeName, onFind }) => {
     </label>
   );
 };
-export default Filter;
+Filter.propTypes = {
+  findeName: PropTypes.string,
+  onFind: PropTypes.function(),
+};

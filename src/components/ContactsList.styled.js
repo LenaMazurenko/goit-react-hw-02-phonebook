@@ -1,15 +1,17 @@
-.ContactsList {
+import styled from '@emotion/styled';
+
+export const List = styled.ul`
   list-style: none;
-}
-.ContactsList_item {
+`;
+export const Item = styled.li`
   display: flex;
   justify-content: center;
   align-items: center;
   border-bottom: 1px solid #000;
-}
-.ItemBtn {
+`;
+export const Btn = styled.button`
   display: block;
   height: 30px;
   width: 60px;
   margin-left: 50px;
-}
+`;

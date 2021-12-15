@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { nanoid } from 'nanoid';
-import Section from './components/Section';
+import { Wrapper } from './components/Section';
 import FormContacts from './components/FormContacts';
-import Filter from './components/Filter';
+import { Filter } from './components/Filter';
 import ContactsList from './components/ContactsList';
 
 class App extends Component {
@@ -60,7 +60,7 @@ class App extends Component {
     const findesContacts = this.findeContact();
 
     return (
-      <Section>
+      <Wrapper>
         <h1>Phonebook </h1>
         <FormContacts onSubmitProp={this.formSubmitHundler} />
         <h2>Contacts</h2>
@@ -71,7 +71,7 @@ class App extends Component {
           findeContact={findesContacts}
           onDelet={this.deletHundler}
         />
-      </Section>
+      </Wrapper>
     );
   }
 }
