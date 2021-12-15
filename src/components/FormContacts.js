@@ -30,6 +30,7 @@ class FormContacts extends Component {
     return (
       <Form onSubmit={this.handleSubmit}>
         <Label>
+          <br />
           Name
           <input
             type="text"

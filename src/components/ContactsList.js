@@ -25,6 +25,5 @@ ContactsList.propTypes = {
       number: PropTypes.string,
     }),
   ),
-  onDelet: PropTypes.function(),
 };
 export default ContactsList;

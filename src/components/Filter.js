@@ -19,5 +19,4 @@ export const Filter = ({ findeName, onFind }) => {
 };
 Filter.propTypes = {
   findeName: PropTypes.string,
-  onFind: PropTypes.function(),
 };
