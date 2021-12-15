@@ -42,13 +42,12 @@ class App extends Component {
   };
 
   findeContact = () => {
-    const findeContact = this.state.contacts.filter(
-      item =>
-        item.name.toLowerCase().includes(this.state.filter.toLowerCase()) ===
-        true,
+    const { contacts, filter } = this.state;
+    const normalizedFilter = filter.toLowerCase();
+
+    return contacts.filter(item =>
+      item.name.toLowerCase().includes(normalizedFilter),
     );
-    console.log(findeContact);
-    return findeContact !== [] ? findeContact : undefined;
   };
 
   deletHundler = id => {
@@ -58,6 +57,8 @@ class App extends Component {
   };
 
   render() {
+    const findesContacts = this.findeContact();
+    console.log(findesContacts);
     return (
       <Section>
         <h1>Phonebook </h1>
@@ -67,8 +68,7 @@ class App extends Component {
         <Filter findeName={this.state.filter} onFind={this.filterHundler} />
 
         <ContactsList
-          list={this.state.contacts}
-          findeContact={this.findeContact()}
+          findeContact={findesContacts}
           onDelet={this.deletHundler}
         />
       </Section>
